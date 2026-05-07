@@ -26,5 +26,6 @@ RUN rm -f /etc/apt/sources.list.d/yarn.list \
       x11vnc \
       xvfb \
       chromium \
+      chromium-driver \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
