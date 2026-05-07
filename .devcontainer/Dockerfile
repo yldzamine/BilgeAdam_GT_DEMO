@@ -25,6 +25,5 @@ RUN apt-get update \
       x11vnc \
       xvfb \
       chromium \
-      chromium-driver \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

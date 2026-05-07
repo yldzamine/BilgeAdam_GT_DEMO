@@ -24,7 +24,13 @@ require_command() {
 require_command java
 require_command mvn
 require_command chromium
-require_command chromedriver
+# Note: chromedriver must be installed separately (not available in Debian repos)
+# It will be installed on-demand by Selenium or can be downloaded separately
+if command -v chromedriver >/dev/null 2>&1; then
+  ok "chromedriver is available"
+else
+  echo "[WARN] chromedriver not installed yet. It will be downloaded on-demand by Selenium."
+fi
 require_command Xvfb
 require_command x11vnc
 require_command websockify
