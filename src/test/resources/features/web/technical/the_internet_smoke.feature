@@ -1,4 +1,4 @@
-@web @smoke @technical
+@web @smoke @technical @happy
 Feature: The Internet technical lab
   Technical web examples for dropdown, iframe, wait, and introductory shadow DOM.
 
