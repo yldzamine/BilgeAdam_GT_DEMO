@@ -1,16 +1,20 @@
 package com.gt.demo.web.pages.business;
 
 import com.gt.demo.web.base.BaseWebPage;
+import com.gt.demo.web.locators.JsonLocatorRepository;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ParaBankHomePage extends BaseWebPage {
-  private static final By USERNAME = By.name("username");
-  private static final By PASSWORD = By.name("password");
-  private static final By LOGIN_BUTTON = By.cssSelector("input.button[value='Log In']");
-  private static final By REGISTER_LINK = By.linkText("Register");
-  private static final By LOGIN_ERROR = By.cssSelector("#rightPanel p.error");
-  private static final By LOGOUT_LINK = By.linkText("Log Out");
+  private static final JsonLocatorRepository LOCATORS =
+      JsonLocatorRepository.fromResource("locators/web/parabank-locators.json");
+
+  private static final By USERNAME = LOCATORS.by("home", "username");
+  private static final By PASSWORD = LOCATORS.by("home", "password");
+  private static final By LOGIN_BUTTON = LOCATORS.by("home", "loginButton");
+  private static final By REGISTER_LINK = LOCATORS.by("home", "registerLink");
+  private static final By LOGIN_ERROR = LOCATORS.by("home", "loginError");
+  private static final By LOGOUT_LINK = LOCATORS.by("home", "logoutLink");
 
   public ParaBankHomePage(WebDriver driver) {
     super(driver);
@@ -32,6 +36,10 @@ public class ParaBankHomePage extends BaseWebPage {
 
   public String loginError() {
     return text(LOGIN_ERROR);
+  }
+
+  public String dashboardTitle() {
+    return driver.getTitle();
   }
 
   public boolean isLoggedIn() {

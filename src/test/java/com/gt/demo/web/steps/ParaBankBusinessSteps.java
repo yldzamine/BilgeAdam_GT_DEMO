@@ -21,9 +21,9 @@ public class ParaBankBusinessSteps {
     homePage.open(FrameworkConfig.getRequired("web.business.baseUrl"));
   }
 
-  @When("I login with invalid business credentials")
-  public void loginWithInvalidBusinessCredentials() {
-    homePage.login("invalid-user", "invalid-pass");
+  @When("I login with {string} username and {string} password")
+  public void loginWithValidBusinessCredentials(String username, String password) {
+    homePage.login(username, password);
   }
 
   @Then("I should see a business login error")
@@ -33,6 +33,14 @@ public class ParaBankBusinessSteps {
         actualError.contains("could not be verified"),
         "Expected ParaBank invalid login message to contain 'could not be verified' but was: "
             + actualError);
+  }
+  @Then("I should be redirected to the business homepage dashboard")
+  public void shouldBeRedirectedToBusinessHomepageDashboard() {
+    String actualTitle = homePage.dashboardTitle();
+    Assert.assertEquals(
+        actualTitle,
+        "ParaBank | Welcome",
+        "Expected ParaBank homepage title not found.");
   }
 
   @Given("I open ParaBank registration page")
