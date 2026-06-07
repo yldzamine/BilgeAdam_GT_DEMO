@@ -1,0 +1,10 @@
+{
+  "home": {
+    "username": { "by": "id", "value": "customer.username" },
+    "password": { "by": "id", "value": "customer.password" },
+    "loginButton": { "by": "xpath", "value": "//input[@value='Log In']" },
+    "registerLink": { "by": "linkText", "value": "Register" },
+    "loginError": { "by": "css", "value": ".error" },
+    "logoutLink": { "by": "linkText", "value": "Log Out" }
+  }
+}

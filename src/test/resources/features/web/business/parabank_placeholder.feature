@@ -9,7 +9,7 @@
     @web 
 Feature: ParaBank business flows
     Business-like scenarios are kept simple for training and explainability.
-    @smoke @happy
+    @smoke @happy @wip
   Scenario: Invalid login should show a clear business error
     Given I open ParaBank home page
     When I login with "Invalid-user" username and "Invalid-pass" password

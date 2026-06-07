@@ -75,6 +75,13 @@
     </dependency>
 
     <!-- Logging: Karate already brings a SLF4J implementation (Logback). Keep only one binding. -->
+    <!-- Small JSON library for locator repository parsing -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20230618</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
